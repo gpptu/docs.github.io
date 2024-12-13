@@ -1,0 +1,1262 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+	<style>
+* {
+  -webkit-transition: 200ms;
+  -moz-transition: 200ms;
+  -ms-transition: 200ms;
+  -o-transition: 200ms;
+  transition: 200ms;
+  text-align: justify;
+  text-justify: inter-word;
+
+}
+
+a, a:visited, a:hover, a:active {
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  position: relative;
+  transition: 0.5s color ease;
+  text-decoration: none;
+}
+
+a.before:before, a.after:after {
+  content: "";
+  transition: 0.5s all ease;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  position: absolute;
+}
+
+a.before:before {
+  top: -0.25em;
+}
+
+a.after:after {
+  bottom: -0.25em;
+}
+
+a.before:before, a.after:after {
+  height: 3px;
+  height: 0.1rem;
+  width: 0;
+  background: #ffffff;
+}
+
+a.before:hover:before, a.after:hover:after {
+  width: 100%;
+}
+
+a.linhaEsq:after {
+  left: 0;
+}
+
+body {
+  Color: #666;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 1em;
+  line-height: 1.4em;
+  font-weight: normal;
+  padding: 20px 30px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bold;
+  font-size: 2.15em;
+  line-height: 1.5em;
+  margin: .45em 0;
+  padding: 0;
+  text-transform: uppercase;
+}
+
+#principal h1 {
+  color: #d7df22;
+}
+
+h2.titInicial {
+  color: #ffffff !important;
+  margin: 0;
+  font-weight: bold;
+  line-height: 100%;
+}
+
+p.textInicial {
+  margin: 5px 0 10px;
+}
+
+#principal p {
+  color: white;
+  font-size: 1em;
+  line-height: 1.25em;
+}
+
+#principal p.legendaInferior {
+  font-size: .6em;
+  width: 100%;
+  margin: 55px auto 5px;
+  display: block;
+}
+
+#menur {
+  display: none;
+}
+
+nav {
+  margin-top: 28px;
+  margin-left: 200px;
+  display: block;
+  float: left;
+}
+
+nav ul {
+  display: block;
+}
+
+nav li {
+  display: inline-block;
+  margin-left: 25px;
+  color: #ffffff;
+}
+
+nav li a {
+  text-decoration: none;
+  color: #ffffff !important;
+}
+
+.botoesAcoes {
+  display: block;
+  margin-top: 20px;
+  float: right;
+  margin-right: 20px;
+}
+
+.button {
+  border-radius: 50em;
+  background-color: #86bf3c;
+  border: none;
+  color: #FFFFFF;
+  text-align: center;
+  font-size: .85em;
+  font-weight: bold;
+  padding: 8px 0;
+  width: 110px;
+  transition: all 0.5s;
+  cursor: pointer;
+}
+
+.button span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.button span:after {
+  content: '\21A9';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+.button:hover span {
+  padding-right: 14px;
+}
+
+.button:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+
+.select {
+  border-radius: 50em;
+  background-color: #0d417e;
+  border: none;
+  color: #FFFFFF;
+  text-align: center;
+  font-size: .85em;
+  font-weight: bold;
+  width: auto;
+  transition: all 0.5s;
+  cursor: pointer;
+  padding: 8px;
+}
+
+#pesquisaProduto {
+  text-align: center;
+  width: 90%;
+  overflow: hidden;
+  clear: both;
+  margin: 0 10%;
+}
+
+.inputPesquisa, .inputSubmit {
+  min-height: 50px;
+  float: left;
+}
+
+.inputPesquisa {
+  border: 1px solid #ededed;
+  width: 80%;
+  background-color: #ffffff;
+  border-radius: 50em 0 0 50em;
+  font-size: 2em;
+  margin-right: 0;
+  padding-left: 30px;
+}
+
+.inputSubmit {
+  background: #86bf3c url(../images/ico_pesquisar.svg) center center no-repeat;
+  background-size: 60%;
+  border: 1px solid #86bf3c;
+  border-radius: 0 50em 50em 0;
+  font-size: 2em;
+  width: 55px;
+  margin-left: 0;
+}
+
+.inputSubmit:hover {
+  background-size: 70%;
+}
+
+.infos h1 {
+  color: #003874;
+}
+
+.infos .row {
+  text-align: center;
+  margin: 0 auto;
+}
+
+#textoInfo {
+  width: 100%;
+  display: block;
+
+}
+
+#textoInfo a {
+  color: #003874;
+  text-decoration: none;
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+#textoInfo {
+  margin: 10px auto;
+}
+
+#textoInfo p {
+  color: #ffffff;
+  font-size: .9em;
+  font-weight: normal;
+  vertical-align: middle;
+}
+
+#textoInfo p .numeralDest {
+  font-size: 1.35em;
+  font-weight: bold;
+}
+
+/* links */
+a, a:visited, a:active, a:hover {
+  color: #d7df22;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+* {
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+}
+
+/* estrutura */
+.wrapper {
+  width: 92%;
+  margin: 0 auto;
+}
+
+header {
+  padding: 15px 0;
+  background-color: #1564c0;
+  min-height: 75px;
+}
+
+#header-info.wrapper {
+  margin: 0 auto;
+}
+
+.InfosFooter {
+  float: left;
+  display: block;
+  width: 50%
+}
+
+.logosGov {
+  float: right;
+  margin-top: 12px;
+  display: block;
+}
+
+.InfosFooter p {
+  margin: 0;
+}
+
+.logoCelepar, .logoGoverno {
+  display: block;
+  float: left;
+}
+
+.logoCelepar {
+  width: 45px;
+  margin-right: 20px;
+}
+
+.logoGoverno {
+  width: 55px;
+  margin-top: 4px;
+}
+
+.logoCelepar:hover, .logoGoverno:hover {
+  transform: scale(1.1);
+}
+
+#logo {
+  display: block;
+  margin-left: 0;
+  position: absolute;
+  top: 25px;
+}
+
+#banner {
+  text-align: center;
+}
+
+#content .row {
+  max-width: 1500px;
+  margin: 0 auto;
+}
+
+#principal, #page-header {
+  padding: 100px 0 100px 0;
+}
+
+#principal h1 {
+  line-height: 1.2em;
+  margin-top: 0px;
+  margin-bottom: 10px;
+}
+
+.gridCentralizado {
+  margin: 0 auto !important;
+  float: unset !important;
+  text-align: center;
+}
+
+.infos {
+  text-align: center;
+}
+
+.inicial {
+  background: url(../images/mapa.jpg) center center repeat;
+  background-size: cover;
+}
+
+.infos {
+  background-color: #86bf3c;
+}
+
+#content.destaques .row {
+  display: block;
+  margin-top: 15px;
+}
+
+#grupoDestaques {
+  display: table
+}
+
+.destaques {
+  background-color: #ffffff;
+  text-align: center;
+}
+
+.destaques img {
+  width: 40%;
+  margin: 10px auto;
+  display: block;
+}
+
+.destaqueQua {
+  border: 1px solid #cccccc;
+  margin-left: 5px;
+  line-height: 115%;
+  min-height: 250px !important;
+}
+
+.destaqueBaixe {
+  background-color: #efdc38;
+}
+
+.destaqueQua h3 {
+  font-size: 1em;
+  font-weight: bold;
+  line-height: 110%;
+  color: #1564c0;
+  margin: 5px 0;
+  padding: 0 15px;
+}
+
+.destaqueQua h3 a {
+  text-decoration: none;
+  color: #1564c0;
+}
+
+.destaqueQua p {
+  font-weight: normal;
+  font-size: 11pt;
+  margin: 0 0 10px;
+}
+
+.destaqueQua.grid_2 a {
+  text-decoration: none;
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.destaqueQua.grid_2 a p, .destaqueQua.grid_2 a ul {
+  color: #666666;
+}
+
+.destaqueQua a.android, .destaqueQua a.ios {
+  width: 50%;
+}
+
+.destaqueQua ul {
+  padding: 0;
+  margin: 0;
+}
+
+.destaqueQua li {
+  font-size: 9pt;
+  list-style-type: none;
+}
+
+.android, .ios {
+  display: block;
+  float: left
+}
+
+.android:hover, .ios:hover {
+  transform: rotate(-15deg);
+}
+
+.android img, .ios img {
+  width: 35px;
+}
+
+#content {
+  margin: 0;
+}
+
+aside {
+  margin: 40px 0;
+}
+
+/* Menu */
+/* RESPONSIVE IMAGES */
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/*SPACE GRID ELEMENTS VERTICALLY, SINCE THEY ARE ONE UNDER ANOTHER SO FAR*/
+.grid_1, .grid_2, .grid_3, .grid_4, .grid_5, .grid_6, .grid_7, .grid_8, .grid_9, .grid_10, .grid_11, .grid_12 {
+  margin-bottom: 20px;
+  position: relative;
+  min-height: 1px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+/*FOOTER*/
+footer {
+  clear: both;
+  font-size: 80%;
+  padding: 5px 0;
+  height:100%;
+}
+
+footer ul {
+  margin: 0;
+  padding: 0;
+}
+
+/*colors and backgrounds*/
+body {
+  background: #fff;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: #333;
+}
+
+footer {
+  background: #1564c0;
+  color: #ffffff;
+}
+
+footer h1, footer h2, footer h3, footer h4 {
+  color: #CCC;
+  margin-bottom: 10px;
+}
+
+footer ul {
+  margin: 0 0 0 8%;
+}
+
+/* Contain floats*/
+.clearfix:before, .clearfix:after, .row:before, .row:after {
+  content: " ";
+  display: table;
+}
+
+.clearfix:after, .container:after, .row:after {
+  clear: both;
+}
+
+@media only screen and (min-width: 481px) {
+
+}
+
+@media only screen and (max-width: 480px) {
+  nav {
+    display: none;
+    margin-top: 30px !important;
+    float: unset;
+  }
+
+  nav li {
+    display: block;
+    margin: 20px 0;
+  }
+
+  #menur {
+    display: block;
+    width: 35px;
+    height: 35px;
+    text-align: center;
+    border-radius: 5px;
+    border: 1px solid #EAE8F3;
+    background: #1564C0 url('../images/menu.svg') no-repeat center center;
+    font-size: 1.25em;
+    position: absolute;
+    right: 20px;
+    top: 0px;
+    text-indent: -1000em;
+  }
+
+  #menur:hover {
+    background-color: #0138AD;
+    border: 1px solid #ccc;
+  }
+
+  .botoesAcoes {
+    margin-top: 40px;
+  }
+
+  .destaqueQua h3 {
+    font-size: 1.5em;
+  }
+
+  .destaqueQua p {
+    font-size: 1em;
+    line-height: 170%;
+  }
+
+  .destaqueQua li {
+    font-size: 1em;
+    line-height: 170%;
+  }
+
+  .android img, .ios img {
+    width: 55px;
+  }
+}
+
+@media only screen and (max-width: 920px) {
+  nav {
+    float: right;
+    margin-top: 10px;
+    margin-left: unset;
+    width: 100%;
+    text-align: right;
+  }
+
+  .botoesAcoes {
+    width: 100%;
+    text-align: right;
+    margin-right: 0;
+  }
+}
+
+@media only screen and (max-width: 540px) {
+
+}
+
+@media only screen and (max-width: 410px) {
+
+}
+
+@media only screen and (max-width: 919px) {
+  .grid_2 {
+    width: 30%;
+    float: left;
+  }
+}
+
+@media only screen and (max-width: 640px) {
+  .grid_2 {
+    width: 45%;
+  }
+}
+
+@media only screen and (max-width: 440px) {
+  .grid_2 {
+    width: 94%;
+  }
+}
+
+@media only screen and (min-width: 920px) {
+  .wrapper {
+    max-width: 1200px;
+    margin: .75em auto;
+  }
+
+  #banner {
+    float: left;
+    text-align: left;
+    margin-bottom: 0px;
+  }
+
+  header {
+    padding: 0;
+  }
+
+  #content {
+    float: left;
+    width: 65%;
+  }
+
+  #content.wide-content {
+    float: none;
+    width: 100%;
+  }
+
+  aside {
+    float: right;
+    width: 30%;
+  }
+
+  /*** MAIN MENU - ESSENTIAL STYLES ***/
+  /*GRID*/
+  /*& Columns : 12 */
+  .row {
+    margin-left: -15px;
+    margin-right: -15px;
+  }
+
+  .grid_1 {
+    width: 8.33333333%;
+  }
+
+  .grid_2 {
+    width: 16.66666667%;
+  }
+
+  .grid_3 {
+    width: 25%;
+  }
+
+  .grid_4 {
+    width: 33.33333333%;
+  }
+
+  .grid_5 {
+    width: 41.66666667%;
+  }
+
+  .grid_6 {
+    width: 50%;
+  }
+
+  .grid_7 {
+    width: 58.33333333%;
+  }
+
+  .grid_8 {
+    width: 66.66666667%;
+  }
+
+  .grid_9 {
+    width: 75%;
+  }
+
+  .grid_10 {
+    width: 83.33333333%;
+  }
+
+  .grid_11 {
+    width: 91.66666667%;
+  }
+
+  .grid_12 {
+    width: 100%;
+  }
+
+  .grid_1, .grid_2, .grid_3, .grid_4, .grid_5, .grid_6, .grid_7, .grid_8, .grid_9, .grid_10, .grid_11, .grid_12 {
+    float: left;
+    display: block;
+  }
+
+  .rightfloat {
+    float: right;
+  }
+
+  #principal [class*="grid_"] {
+    margin-bottom: -20px;
+  }
+}
+
+/*DESKTOP*/
+@media only screen and (min-width: 1030px) {
+
+}
+
+/* LARGE VIEWING SIZE */
+@media only screen and (min-width: 1240px) {
+
+}
+
+/* RETINA (2x RESOLUTION DEVICES)
+retina iPhone (4s) and iPad (2,3) along with
+other displays with a 2x resolution. */
+@media only screen and (-webkit-min-device-pixel-ratio: 1.5), only screen and (min--moz-device-pixel-ratio: 1.5), only screen and (min-device-pixel-ratio: 1.5) {
+
+}
+
+/* iPHONE 5 MEDIA QUERY iPhone 5 or iPod Touch 5th generation styles
+*/
+@media (device-height: 568px) and (-webkit-min-device-pixel-ratio: 2) {
+
+}
+
+/*
+PRINT STYLESHEET
+*/
+@media print {
+  * {
+    background: transparent !important;
+    color: black !important;
+    text-shadow: none !important;
+    filter: none !important;
+    -ms-filter: none !important;
+  }
+
+  /* Black prints faster: h5bp.com/s */
+  a, a:visited {
+    text-decoration: underline;
+  }
+
+  a[href]:after {
+    content: " (" attr(href) ")";
+  }
+
+  abbr[title]:after {
+    content: " (" attr(title) ")";
+  }
+
+  .ir a:after, a[href^="javascript:"]:after, a[href^="#"]:after {
+    content: "";
+  }
+
+  /* Don't show links for images, or javascript/internal links */
+  pre, blockquote {
+    border: 1px solid #999;
+    page-break-inside: avoid;
+  }
+
+  thead {
+    display: table-header-group;
+  }
+
+  /* h5bp.com/t */
+  tr, img {
+    page-break-inside: avoid;
+  }
+
+  img {
+    max-width: 100% !important;
+  }
+
+  @page {
+    margin: 0.5cm;
+  }
+
+  p, h2, h3 {
+    orphans: 3;
+    widows: 3;
+  }
+
+  h2, h3 {
+    page-break-after: avoid;
+  }
+}
+
+	</style>
+</head>
+<body>
+	<div _ngcontent-c4="" class="content">
+
+		<h2 _ngcontent-c4="">Termo de uso</h2>
+
+		<h5 _ngcontent-c4="">TERMO DE USO DO SITE E APLICATIVO MENOR PREÇO</h5>
+		<p _ngcontent-c4="">Este termo de uso (“Termo de Uso”) regulamenta a utilização da plataforma para pesquisa de preços (“Menor
+			Preço”), disponibilizado pela COMPANHIA DE TECNOLOGIA DA INFORMAÇÃO E COMUNICAÇÃO DO PARANÁ, empresa com
+			sede na Cidade de Curitiba e Estado do Paraná, na Rua Mateus Leme, 1561 - Bom Retiro - 80520-174 - Curitiba
+			- PR, inscrita no CNPJ/MF sob o nº 76.545.011/0001-19, doravante denominada simplesmente "CELEPAR", aos seus
+			usuários da internet, através do endereço eletrônico menorpreco.notaparana.pr.gov.br ou aplicativo Android e
+			iOS (doravante “Menor Preço” ou “Plataforma”). No ato de acesso à Plataforma, o USUÁRIO (doravante “USUÁRIO”
+			ou “Você”) se obriga a aceitar e cumprir, plenamente e sem reservas, todos os termos e condições deste Termo
+			de Uso.</p>
+		<p _ngcontent-c4=""> <strong _ngcontent-c4="">SE VOCÊ NÃO CONCORDA COM ESTE TERMO DE USO, NÃO CONECTE, NÃO ACESSE, NÃO REALIZE O DOWNLOAD E NÃO
+				UTILIZE O APLICATIVO DE QUALQUER MANEIRA.
+			</strong></p>
+		<p _ngcontent-c4="">Ao aceitar os Termos, você atesta que toda e qualquer informação que você nos providenciar por meio do
+			Aplicativo é verdadeira e correta. O fornecimento de qualquer informação falsa ou fraudulenta é estritamente
+			proibido e passível de responsabilização penal.
+
+		</p>
+		<ol _ngcontent-c4="">
+			<li _ngcontent-c4="">- <strong _ngcontent-c4="">DESTINAÇÃO DA PLATAFORMA</strong>
+				<ol _ngcontent-c4="">
+					<li _ngcontent-c4="">
+						- Os Estados participantes da plataforma disponibilizarão, através das notas fiscais emitidas
+						pelos estabelecimentos,&nbsp; informações de preços praticados por estes. Desta forma, será possível
+						ao Usuário consultar a respeito dos preços e da data de venda dos produtos.&nbsp;
+					</li>
+					<li _ngcontent-c4="">
+						- A Plataforma destina-se à consulta de preços que integram as notas fiscais eletrônicas (NFC-e
+						e NFe), apenas para fins informativos e de uso próprio, excluindo qualquer utilização comercial
+						ou publicitária. Os estabelecimentos que constam na Plataforma não são obrigados a vender os
+						produtos pelo preço que é informado pela Plataforma.
+					</li>
+				</ol>
+			</li>
+			<li _ngcontent-c4="">- <strong _ngcontent-c4="">CADASTRO</strong>
+				<ol _ngcontent-c4="">
+					<li _ngcontent-c4="">- Para a utilização das listas de compras da Plataforma Você deverá se cadastrar, criando um
+						login e uma senha de acesso pelo site <a _ngcontent-c4="" href="https://notaparana.pr.gov.br/" target="_blank">https://notaparana.pr.gov.br/</a>, utilizar a autenticação do
+						Google ou Facebook. Para pesquisar produtos fora da lista de compras não é necessário
+						autenticação para um número limitado de consultas na Plataforma.
+
+						<ol _ngcontent-c4="">
+							<li _ngcontent-c4="">- Ao se cadastrar, Você deverá informar dados verdadeiros, que serão de sua exclusiva
+								responsabilidade. A CELEPAR não se responsabiliza por dados falsos inseridos no
+								cadastro.</li>
+						</ol>
+					</li>
+					<li _ngcontent-c4="">- Para o cadastramento, Você precisa ter pelo menos 18 (dezoito) anos completos e ser plenamente
+						capaz e deve fazer uma declaração nesse sentido. Se Você for menor de 18 (dezoito) anos ou
+						necessitar de representação na forma da lei, seus pais ou responsáveis deverão lhe representar
+						ou assistir. Neste caso, eles deverão preencher o seu cadastro e se responsabilizarão
+						integralmente por Você e por seus atos.
+
+					</li>
+					<li _ngcontent-c4="">- Você é responsável por seu login e senha de acesso. Em caso de perda ou roubo da senha de
+						acesso do Nota Paraná, deve comunicar imediatamente à CELEPAR, através do endereço 
+						<a _ngcontent-c4="" href="https://notaparana.pr.gov.br/">https://notaparana.pr.gov.br/</a>.
+
+					</li>
+					<li _ngcontent-c4="">- A CELEPAR manterá os Dados Pessoais informados no cadastramento do USUÁRIO pois são
+						necessários para o funcionamento da plataforma, com a finalidade de controle dos acessos e
+						possibilitar o uso da função “listas de compras”. Ao realizar uma pesquisa, Você aceita e
+						concorda com o os termos de uso especificados nesse documento.
+					</li>
+				</ol>
+			</li>
+			<li _ngcontent-c4="">– <strong _ngcontent-c4="">CONDIÇÕES DE USO DA PLATAFORMA</strong>
+				<ol _ngcontent-c4="">
+					<li _ngcontent-c4="">- Ao utilizar a Plataforma, Você se compromete a observar o Termo de Uso além disso se
+						compromete a NÃO utilizar comercialmente os dados obtidos pela Plataforma.
+					</li>
+					<li _ngcontent-c4="">- Você não deverá utilizar a Plataforma para a prática de atos proibidos pela lei e pelo
+						presente Termo de Uso, ou atos que possam danificar, inutilizar, sobrecarregar ou deteriorar a
+						Plataforma, os equipamentos informáticos de outros usuários ou de outros internautas (hardware e
+						software), assim como os documentos, arquivos e toda classe de conteúdos armazenados nos seus
+						equipamentos informáticos (cracking, scanning, bots) ou impedir a normal utilização da referida
+						ferramenta, equipamentos informáticos e conteúdos por parte dos demais usuários e de outros
+						internautas.
+
+						<ol _ngcontent-c4="">
+							<li _ngcontent-c4="">- Você se compromete a não utilizar qualquer sistema automatizado, inclusive, mas sem se
+								limitar a "robôs", "spiders" ou "agentes automatizados", que acessem a Plataforma de
+								maneira a efetuar diversas solicitações aos servidores da CELEPAR em um dado período de
+								tempo, que seja considerado humanamente impossível de ser realizado no mesmo período por
+								meio de um navegador convencional ou de um aplicativo.
+
+							</li>
+							<li _ngcontent-c4="">
+								- É vedada também a utilização da Plataforma para aplicações de “Pricing”, ou
+								verificação de preços da concorrência e a utilização abusiva da Plataforma, tanto na
+								pesquisa de produtos quanto na lista de compras.
+
+							</li>
+							<li _ngcontent-c4="">
+								- A qualquer momento a CELEPAR poderá, por meios de mecanismos automatizados ou
+								verificações em sua base, validar se o Usuário está utilizando a Plataforma
+								irregularmente e poderá bloquear, parcial ou definitivamente, a utilização do aplicativo
+								pelo Usuário, seja impedindo o acesso por IP, ASN, CPF, conta do Google ou Facebook.
+
+							</li>
+						</ol>
+					</li>
+					<li _ngcontent-c4="">
+						- As seguintes ações por parte do USUÁRIO são passíveis de bloqueio do perfil e proibição de uso
+						da plataforma por tempo indeterminado, independente de aviso prévio:
+
+						<p _ngcontent-c4="" class="recuo">(a) Utilizar do aplicativo para precificação da concorrência, identificada por
+							verificações da rede de origem, pesquisa ou comportamento do usuário;
+
+						</p>
+						<p _ngcontent-c4="" class="recuo">(b) Utilizar listas de produtos que somem mais de 500 itens, seja ativos ou
+							excluídos;
+
+						</p>
+						<p _ngcontent-c4="" class="recuo"> (c) Utilizar da plataforma para obter vantagem comercial;
+						</p>
+						<p _ngcontent-c4="" class="recuo"> (d) Utilizar o aplicativo para violar segredos empresariais de terceiros;
+						</p>
+						<p _ngcontent-c4="" class="recuo"> (e) Utilização abusiva das pesquisas e das listas de compras, quando
+							executadas diversas vezes num curto período de tempo e/ou em locais diferentes.
+
+						</p>
+						<p _ngcontent-c4="" class="recuo"> (f) Utilizar a Plataforma para fins comerciais ou publicitários,
+							compreendidos, inclusive: scanning, finalidade comercial (prospecção de negócios, venda de
+							serviços e mercadorias, ainda que relacionados à pessoa física, etc.) ou uso relacionado com
+							negócios, ou que seja relacionado a venda de produtos ou serviços (com ou sem fins
+							lucrativos).
+
+						</p>
+						<p _ngcontent-c4="" class="recuo"> (g) Utilizar os serviços da Plataforma em outro aplicativo ou site.
+						</p>
+					</li>
+					<li _ngcontent-c4="">
+						- Caso Você utilize a Plataforma contrariando as proibições da cláusula 3.3 acima ou
+						contrariando qualquer outra disposição deste Termo de Uso, a CELEPAR poderá, a seu exclusivo
+						critério, bloquear seu IP de acesso, bloqueá-lo como Usuário, excluir as suas listas de compras
+						e/ou bloquear o cadastro do Usuário, a qualquer tempo e sem qualquer aviso prévio.
+
+					</li>
+				</ol>
+			</li>
+			<li _ngcontent-c4="">
+				- Os dados coletados referentes a pesquisas efetuadas e listas de compras cadastradas na Plataforma
+				poderão ser utilizados para compor uma base de dados anonimizada.
+
+			</li>
+			<li _ngcontent-c4="">– <strong _ngcontent-c4="">EXCLUSÃO DE GARANTIAS E DE RESPONSABILIDADE</strong>
+				<ol _ngcontent-c4="">
+					<li _ngcontent-c4="">
+						- A CELEPAR não tem obrigação de controlar a utilização da Plataforma pelos Usuários. A CELEPAR
+						também não tem a obrigação de verificar a identidade dos Usuários, nem a veracidade, vigência, e
+						autenticidade dos dados que os Usuários informam sobre si mesmos à CELEPAR, a outros usuários ou
+						a terceiros.
+
+					</li>
+					<li _ngcontent-c4="">
+						- A CELEPAR NÃO SE RESPONSABILIZA PELOS DANOS E PREJUÍZOS DIRETOS OU INDIRETOS QUE POSSAM SER
+						CAUSADOS PELO USUÁRIO EM VIRTUDE DA UTILIZAÇÃO DA PLATAFORMA, OU DO CONTEÚDO DISPONIBILIZADO.
+						<ol _ngcontent-c4="">
+							<li _ngcontent-c4="">- A CELEPAR NÃO GARANTE A FIDEDIGNIDADE DOS PREÇOS EXTRAÍDOS DE NOTAS FISCAIS
+								PREENCHIDAS SEM VERACIDADE, VIGÊNCIA OU AUTENTICIDADE PELOS ESTABELECIMENTOS COMERCIAIS,
+								INCLUSIVE, EM VIRTUDE DA SIMULAÇÃO DE UMA COMPRA.
+
+							</li>
+						</ol>
+					</li>
+					<li _ngcontent-c4="">- Você, Usuário, é o único responsável pelo modo de utilização da Plataforma, de modo que
+						responderá integralmente por qualquer ato que cause danos a direitos de terceiros, que viole o
+						presente Termo de Uso, leis ou regulamentos locais, nacionais ou internacionais aplicáveis.
+
+					</li>
+					<li _ngcontent-c4="">
+						-A CELEPAR não garante, de forma expressa ou implícita, o desempenho e a adequação da Plataforma
+						para qualquer finalidade específica desejada por Você.
+
+					</li>
+					<li _ngcontent-c4="">- A CELEPAR não é responsável pela prestação de quaisquer serviços ou bens, vendidos ou
+						anunciados através da Plataforma.
+					</li>
+					<li _ngcontent-c4="">- A CELEPAR não é responsável pela prestação de quaisquer serviços ou bens, vendidos ou
+						anunciados através da
+						Plataforma.</li>
+				</ol>
+			</li>
+			<li _ngcontent-c4="">
+				– <strong _ngcontent-c4="">DA LICENÇA DE USO DA PLATAFORMA</strong>
+				<ol _ngcontent-c4="">
+					<li _ngcontent-c4="">
+						- A CELEPAR autoriza o uso dos aplicativos de informática que compõem a Plataforma Menor preço,
+						desde que tal fato ocorra estritamente em conformidade com o estabelecido neste Termo de Uso. A
+						CELEPAR não concede nenhuma outra licença ou autorização de uso sobre os seus direitos de
+						propriedade industrial e intelectual.
+
+					</li>
+					<li _ngcontent-c4="">
+						- Você não deverá, seja por você ou por alguém sob seu consentimento:
+						<p _ngcontent-c4="" class="recuo"> (i) copiar, modificar, adaptar, traduzir, descompilar ou desconstruir,
+							adaptar, sublicenciar o aplicativo (ou qualquer parte dele), distribuir, expor, executar
+							publicamente, tornar disponível para o público, emular, reduzir a uma forma possível de
+							leitura humana, realizar de qualquer forma de comercialização, tais como: vender, alugar,
+							emprestar, processar, compilar, proceder a reengenharia reversa, combinando com outro
+							software, traduzir, modificar ou criar trabalhos derivados de qualquer material que esteja
+							sujeito a proteção por direitos de propriedade titularizados pela CELEPAR;
+						</p>
+						<p _ngcontent-c4="" class="recuo"> (ii) utilizar o aplicativo e/ou em conexão para spam, envio de mensagem não
+							solicitada, assédio, fraude eletrônica ou conduta similar;
+						</p>
+						<p _ngcontent-c4="" class="recuo"> (iii) interferir em ou violar o direito de privacidade de qualquer outro
+							usuário ou terceiros, incluindo direito de propriedade intelectual, ou coletar informações
+							pessoais identificáveis de outros usuários do aplicativo sem o seu consentimento, incluindo
+							a utilização de robôs, spider, sites de busca ou de recuperação de dados, ou outro
+							dispositivo manual ou automático de recuperação, indexação ou de data-mine;
+						</p>
+						<p _ngcontent-c4="" class="recuo"> (iv) difamar, abusar, assediar, perseguir, ameaçar, ou de qualquer forma,
+							violar os direitos individuais de outros;
+						</p>
+						<p _ngcontent-c4="" class="recuo"> (v) transmitir ou de qualquer forma manter disponível para contato com o
+							aplicativo qualquer vírus eletrônico, “worm”, “cavalo de troia”, “time bomb”, “web bug”,
+							“spyware” ou qualquer outro código de computador, arquivo ou programa que possa ou esteja
+							destinado a causar dano ou sabotar a operação de qualquer hardware, software ou equipamento
+							de telecomunicação, ou qualquer outro código ou componente de natureza invasiva,
+							perturbadora ou prejudicial.
+						</p>
+						<p _ngcontent-c4="" class="recuo"> (vi) interferir com ou prejudicar a operação do aplicativo, ou dos servidores
+							ou da rede que hospeda o aplicativo, ou desobedecer qualquer requisito, procedimento,
+							política ou regulação de tais servidores ou redes;
+						</p>
+						<p _ngcontent-c4="" class="recuo"> (vii) vender, licenciar ou explorar para qualquer propósito comercial a
+							utilização ou acesso ao aplicativo;
+						</p>
+						<p _ngcontent-c4="" class="recuo"> (viii) realizar uma moldura (frame) ou espelhamento (mirror) de qualquer parte
+							deste aplicativo sem a autorização expressa da CELEPAR;
+						</p>
+						<p _ngcontent-c4="" class="recuo"> (ix) criar um banco de dados por meio de download sistemáticos ou
+							armazenamento de qualquer conteúdo do aplicativo;
+						</p>
+						<p _ngcontent-c4="" class="recuo"> (x) providenciar informação pessoal falsa ou enganosa;
+						</p>
+						<p _ngcontent-c4="" class="recuo"> (xi) utilizar do aplicativo para qualquer propósito imoral, ilegal ou não
+							autorizado;
+						</p>
+						<p _ngcontent-c4="" class="recuo"> (xii) utilizar o aplicativo para utilização não particular ou comercial.
+						</p>
+					</li>
+				</ol>
+			</li>
+			<li _ngcontent-c4=""> - <strong _ngcontent-c4="">VIGÊNCIA</strong>
+				<ol _ngcontent-c4="">
+					<li _ngcontent-c4="">
+						- A CELEPAR se reserva no direito de modificar, corrigir, melhorar, alterar, otimizar, fazer
+						qualquer outra mudança, ou descontinuar, temporária ou permanentemente o Aplicativo (ou qualquer
+						parte dele, incluindo mas não limitada somente ao conteúdo), independentemente de comunicado
+						prévio, a qualquer tempo e na sua inteira discricionariedade. Além disso, você agora reconhece
+						que o conteúdo providenciado pelo Aplicativo pode ser alterado, estendido em termos de conteúdo
+						ou forma ou ainda removido a qualquer tempo e sem prévia notificação. Você concorda que a
+						CELEPAR não está legalmente obrigada perante você ou terceiros por qualquer modificação,
+						suspensão ou descontinuidade do Aplicativo.
+
+					</li>
+					<li _ngcontent-c4="">
+						- A disponibilidade do aplicativo e sua funcionalidade depende de vários fatores, tais como o
+						software para conexão em rede, questões de hardware, provedores de conexão da CELEPAR e rede
+						pública de telefonia celular. A CELEPAR não garante ou assegura que o aplicativo operará e/ou
+						estará disponível em todo o tempo sem interrupção ou ruptura, ou estar imune a acesso não
+						autorizado.
+
+					</li>
+				</ol>
+			</li>
+			<li _ngcontent-c4="">
+				- <strong _ngcontent-c4="">DISPOSIÇÕES GERAIS</strong>
+				<ol _ngcontent-c4="">
+					<li _ngcontent-c4="">
+						- O não exercício pela CELEPAR ou pelo Usuário de quaisquer direitos ou faculdades que lhes
+						sejam conferidos por este Termo de Uso ou pela legislação, bem como a eventual tolerância contra
+						infrações a este Termo de Uso, não importará na renúncia aos seus direitos, novação ou alteração
+						de itens e cláusulas deste Termo de Uso, podendo a CELEPAR ou Usuário exercê-los a qualquer
+						momento.
+
+					</li>
+					<li _ngcontent-c4="">
+						- O presente termo de uso será interpretado e regido de acordo com as leis e regulamentos da
+						República Federativa do Brasil e quaisquer disputas judiciais oriundas do presente termo de uso
+						deverão ser submetidas ao foro central da Comarca da Região Metropolitana de Curitiba – Estado
+						do Paraná.
+
+					</li>
+					<li _ngcontent-c4="">
+						- Caso alguma condição ou restrição, termo ou disposição do presente termo de uso seja declarada
+						nula por decisão judicial, transitada em julgado, tal nulidade não se estenderá as demais
+						condições, restrições, termos ou disposições aqui previstas, as quais permanecerão em pleno
+						vigor e efeito.
+
+					</li>
+					<li _ngcontent-c4="">
+						- O presente instrumento, bem como a cessão prevista na cláusula quarta acima não importam na
+						criação de qualquer vínculo trabalhista, societário, de parceria ou associativo entre a CELEPAR
+						e o Usuário.
+
+					</li>
+					<li _ngcontent-c4="">
+						- A marcação do “check-box” ao lado do texto "Concordo com os Termos", seguida pelo clique no
+						botão "aceitar" e/ou a utilização da Plataforma por Você são consideradas, para todos os fins de
+						direito, como sua aceitação de todos os termos e condições do presente Termo de Uso, que terá
+						valor de contrato, passando o mesmo a regular a relação entre a CELEPAR e Você.
+
+					</li>
+					<li _ngcontent-c4="">
+						- Todas as comunicações da CELEPAR com o Usuário serão feitas via e-mail. A&nbsp; CELEPAR poderá
+						divulgar notificações ou mensagens através da Plataforma ou do site do Menor Preço para informar
+						ao Usuário eventuais mudanças na Plataforma ou no Termo de Uso e/ou outras informações que
+						considerar relevantes.
+
+					</li>
+					<li _ngcontent-c4="">
+						- Se você tiver qualquer questionamento (ou comentário) concernente ao presente termo de uso,
+						você é bem-vindo a entrar em contato em nossos <a _ngcontent-c4="" href="http://www.atendimento.fazenda.pr.gov.br/sacsefa/portal/index" target="_blank">canais de
+							atendimento</a> e responderemos dentro de
+						um prazo razoável.
+
+					</li>
+				</ol>
+			</li>
+			<li _ngcontent-c4="">
+				- <strong _ngcontent-c4="">POLÍTICA DE PRIVACIDADE</strong>
+				<p _ngcontent-c4="" class="item-raiz">Nosso compromisso é respeitar sua privacidade e garantir o sigilo de todas as
+					informações que você nos fornece, através de nosso site www.menorpreco.pr.gov.br e do aplicativo
+					“Menor Preço”. Por isso, com o objetivo de fornecer informações claras e precisas aos Titulares
+					acerca do tratamento de dados pessoais, apresentamos nossa política de privacidade (“Política de
+					Privacidade”).
+				</p>
+				<ol _ngcontent-c4="">
+					<li _ngcontent-c4="">
+						- <strong _ngcontent-c4="">Coleta e Uso</strong>
+						<p _ngcontent-c4="" class="item-raiz"> Coletamos o mínimo necessário. Utilizamos também as informações já antes
+							informadas junto aos sistemas de autenticação que utilizamos como Facebook, Google e Nota
+							Paraná.&nbsp;
+							&nbsp;
+						</p>
+						<ol _ngcontent-c4="">
+							<li _ngcontent-c4="">- Utilizamos seu e-mail, apenas para identificar unicamente seu usuário e para
+								comunicações sobre nosso aplicativo.&nbsp;
+								&nbsp;</li>
+							<li _ngcontent-c4="">- Utilizamos a sua localização para poder saber em qual local você deseja pesquisar os
+								produtos desejados.&nbsp;
+							</li>
+							<li _ngcontent-c4="">- Coletamos seu IP para fins de controle de acesso e evitar o uso de robôs, o que
+								poderia onerar nossos servidores.
+							</li>
+							<li _ngcontent-c4="">- Coletamos os produtos que o usuário adiciona na lista de compras, para ajudar a trazer
+								os produtos numa lista organizada. O usuário pode a qualquer momento excluir esses
+								produtos e listas.
+							</li>
+						</ol>
+					</li>
+					<li _ngcontent-c4="">
+						- <strong _ngcontent-c4="">Cookies</strong>
+						<p _ngcontent-c4="" class="item-raiz"> No Menor Preço o uso de cookies é feito apenas para reconhecer um
+							visitante constante e melhorar a experiência de navegação e usabilidade. Os cookies são
+							pequenos arquivos de dados transferidos de um site da web para o disco do seu computador.
+
+						</p>
+					</li>
+					<li _ngcontent-c4="">
+						- <strong _ngcontent-c4="">Compartilhamento de Dados Pessoais</strong>
+						<p _ngcontent-c4="" class="item-raiz">O Menor Preço não vende, troca ou aluga informações pessoais dos seus
+							usuários. Nós podemos utilizar informações genéricas sobre o perfil dos nossos visitantes
+							para fins estatísticos, sem expor nenhuma informação pessoal, resguardando assim, a
+							identidade dos nossos usuários.
+
+						</p>
+					</li>
+					<li _ngcontent-c4="">
+						- <strong _ngcontent-c4="">Segurança da Informação</strong>
+						<ol _ngcontent-c4="">
+							<li _ngcontent-c4="">- Tomamos medidas de segurança técnicas e organizacionais adequadas para proteger os
+								seus dados pessoais contra acesso, alteração, divulgação ou ainda destruição não
+								autorizada dos dados. Essas medidas incluem análises internas de nossas práticas de
+								coleta, armazenamento e processamento de dados e medidas de segurança, incluindo
+								criptografia e medidas de segurança física apropriadas para nos proteger contra o acesso
+								não autorizado a sistemas em que armazenamos os dados pessoais.
+							</li>
+							<li _ngcontent-c4="">- Nosso site utiliza uma tecnologia avançada de segurança. Todo o tráfego de dados é
+								feito com as informações criptografadas, que é um método padrão usado na Internet para
+								proteger as comunicações entre os usuários da Web e os sites, fornecendo uma navegação
+								segura.
+							</li>
+							<li _ngcontent-c4="">
+								- Limitamos o acesso às informações pessoais aos funcionários que precisam ter
+								conhecimento dessas informações para processá-las em nosso nome. Essas pessoas estão
+								comprometidas com obrigações de confidencialidade.
+
+							</li>
+						</ol>
+					</li>
+					<li _ngcontent-c4="">
+						- <strong _ngcontent-c4="">Retenção e Término de Dados Pessoais</strong>
+						<ol _ngcontent-c4="">
+							<li _ngcontent-c4="">- O Menor Preço armazena seus dados pessoais pelo tempo exigido por lei ou pelo tempo
+								que for necessário para preservar o legítimo interesse do usuário. Dessa forma,
+								trataremos seus dados, por exemplo, durante os prazos prescricionais aplicáveis ou
+								enquanto necessário para cumprimento de uma obrigação legal ou regulatória.
+							</li>
+							<li _ngcontent-c4="">- O término do tratamento de dados pessoais poderá ocorrer quando o Titular exercer seu
+								direito de solicitar o fim do tratamento e a exclusão de seus dados pessoais ou quando
+								houver determinação legal neste sentido.
+
+							</li>
+						</ol>
+					</li>
+					<li _ngcontent-c4="">
+						- <strong _ngcontent-c4="">Direitos dos Titulares dos Dados Pessoais</strong>
+						<ol _ngcontent-c4="">
+							<li _ngcontent-c4="">- A lei de proteção de dados prevê aos Titulares direitos em relação aos seus dados
+								pessoais, quais sejam:
+								<p _ngcontent-c4="" class="recuo">a) Solicitar o acesso aos dados pessoais e a confirmação da existência
+									de tratamento de dados pessoais;</p>
+								<p _ngcontent-c4="" class="recuo">b) Solicitar a correção de dados incompletos, inexatos ou
+									desatualizados;</p>
+								<p _ngcontent-c4="" class="recuo">c) Solicitar a portabilidade dos dados pessoais a outro fornecedor de
+									serviço ou produto;</p>
+								<p _ngcontent-c4="" class="recuo">d) Solicitar a anonimização ou eliminação dos dados pessoais, em
+									circunstâncias específicas;</p>
+								<p _ngcontent-c4="" class="recuo">e) Se opor às atividades de tratamento de seus dados pessoais e revogar
+									o consentimento, quando o Menor Preço
+									tratar seus dados pessoais com base no consentimento.</p>
+							</li>
+						</ol>
+					</li>
+				</ol>
+			</li>
+		</ol>
+	</div>
+</body>
+</html>
